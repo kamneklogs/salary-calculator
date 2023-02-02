@@ -1,4 +1,5 @@
-﻿using e05.domain;
+﻿using e05.application;
+using e05.domain;
 using e05.infrastructure;
 using Npgsql;
 
@@ -37,6 +38,16 @@ class Program
         foreach (Developer developer in developers)
         {
             Console.WriteLine(developer); // Nice
+
+            // https://github.com/pslcorp/perficient.training.content/tree/main/content/code%20challenges/05.%20developer%20salary%20calculator#increase-requirement
+
+            decimal salary = SalaryCalculator.CalculateSalary(developer);
+
+            Console.WriteLine("Resume:");
+            Console.WriteLine($"Total salary: {salary}");
         }
+
+        System.Console.WriteLine($"Total developers: {developers.Count}");
+
     }
 }
